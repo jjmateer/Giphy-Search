@@ -3,7 +3,7 @@ var animals = ["dog", "cat", "mouse", "lion", "elephant"];
 
 function displayAnimalInfo() {
     var animal = $(this).attr("data-name");
-    var queryUrl= "http://api.giphy.com/v1/gifs/search?" + animal + "&api_key=NU4CtgobR6DQrOPgFkEn1MAdKV6cmqN7";
+    var queryUrl= "https://api.giphy.com/v1/gifs/search?" + animal + "&api_key=NU4CtgobR6DQrOPgFkEn1MAdKV6cmqN7";
     //Create ajax call for the specific animalBtn being clicked
     $.ajax({
         url:queryUrl,
