@@ -16,17 +16,14 @@ function displayAnimalInfo() {
         //Element to display the rating
         var ratingP = $("<p>").text("Rating: " + rating);
         animalDiv.append(ratingP);
-        var imgURL = response.gif;
+        var imgURL = response.Poster;
         //create elemtn tot hol the image
         var image = $("<img>").attr("src", imgURL);
         animalDiv.append(image);
         $("#animalDisplay").prepend(animalDiv);
-        console.log(ratingP)
-        
     });
-
-
 }
+
 
 
 function renderButtons() {
