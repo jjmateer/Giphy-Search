@@ -3,24 +3,28 @@ var animals = ["dog", "cat", "mouse", "lion", "elephant"];
 
 function displayAnimalInfo() {
     var animal = $(this).attr("data-name");
-    var queryUrl= "https://api.giphy.com/v1/gifs/search?" + animal + "&api_key=NU4CtgobR6DQrOPgFkEn1MAdKV6cmqN7";
+    var queryUrl = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=NU4CtgobR6DQrOPgFkEn1MAdKV6cmqN7";
     //Create ajax call for the specific animalBtn being clicked
     $.ajax({
-        url:queryUrl,
-        method:"GET"
-    }).then(function(response) {
-        //Div to hold the animal
-        var animalDiv = $("<div class='animalDiv'>")
-        //Store rating data
-        var rating = response.Rated;
-        //Element to display the rating
-        var ratingP = $("<p>").text("Rating: " + rating);
-        animalDiv.append(ratingP);
-        var imgURL = response.Poster;
-        //create elemtn tot hol the image
-        var image = $("<img>").attr("src", imgURL);
-        animalDiv.append(image);
-        $("#animalDisplay").prepend(animalDiv);
+        url: queryUrl,
+        method: "GET"
+    }).then(function (response) {
+        for (var i = 0; i < 10; i++) {
+            console.log(response.data[i]);
+            var item = response.data[i];
+            //Div to hold the animal
+            var animalDiv = $("<div class='animalDiv'>")
+            //Store rating data
+            var rating = item.rating;
+            //Element to display the rating
+            var ratingP = $("<p>").text("Rating: " + rating);
+            animalDiv.append(ratingP);
+            var imgURL = item.images.fixed_height_still.url;
+            //create elemtn tot hol the image
+            var image = $("<img>").attr("src", imgURL);
+            animalDiv.append(image);
+            $("#animalDisplay").prepend(animalDiv);
+        }
     });
 }
 
