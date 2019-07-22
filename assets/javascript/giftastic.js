@@ -9,11 +9,12 @@ function displayAnimalInfo() {
         url: queryUrl,
         method: "GET"
     }).then(function (response) {
+        $("#animalDisplay").empty();
         for (var i = 0; i < 10; i++) {
             console.log(response.data[i]);
             var item = response.data[i];
             //Div to hold the animal
-            var animalDiv = $("<div class='animalDiv'>")
+            var animalDiv = $("<div>").addClass("animalDiv")
             //Store rating data
             var rating = item.rating;
             //Element to display the rating
@@ -21,15 +22,12 @@ function displayAnimalInfo() {
             animalDiv.append(ratingP);
             var imgURL = item.images.fixed_height_still.url;
             //create elemtn tot hol the image
-            var image = $("<img>").attr("src", imgURL);
+            var image = $("<img>").attr("src", imgURL).addClass("animalImage");
             animalDiv.append(image);
             $("#animalDisplay").prepend(animalDiv);
         }
     });
 }
-
-
-
 function renderButtons() {
     //Make sure there are no duplicate buttons
     $("#buttonDisplay").empty();
@@ -46,6 +44,22 @@ function renderButtons() {
     }
 }
 
+
+
+
+$(".animalImage").on("click", function () {
+    console.log(state);
+    var state = $(this).attr("data-state");
+    if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+    } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+    }
+
+});
+
 //On-click function for submitBtn
 $("#submitBtn").on("click", function (event) {
     //Prevents form from trying to submit itself
@@ -56,6 +70,7 @@ $("#submitBtn").on("click", function (event) {
     animals.push(animalBtn);
     console.log(animals);
     renderButtons();
+
 });
 
 
