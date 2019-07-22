@@ -3,24 +3,25 @@ var animals = ["dog", "cat", "mouse", "lion", "elephant"];
 
 function displayAnimalInfo() {
     var animal = $(this).attr("data-name");
-    var queryUrl = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=NU4CtgobR6DQrOPgFkEn1MAdKV6cmqN7";
+    var queryUrl = "https://api.giphy.com/v1/gifs/search?q=" + 
+    animal + "&api_key=NU4CtgobR6DQrOPgFkEn1MAdKV6cmqN7";
     //Create ajax call for the specific animalBtn being clicked
     $.ajax({
         url: queryUrl,
         method: "GET"
-    }).then(function (response) {
+    }).done(function (response) {
         $("#animalDisplay").empty();
-        for (var i = 0; i < 10; i++) {
-            console.log(response.data[i]);
-            var item = response.data[i];
-            //Div to hold the animal
+        for (var i = 0;i < 10; i++) {
             var animalDiv = $("<div>").addClass("animalDiv")
-            //Store rating data
-            var rating = item.rating;
-            //Element to display the rating
-            var ratingP = $("<p>").text("Rating: " + rating);
+            console.log(response.data[i]);
+            var results = response.data[i];
+            var rating = results.rating;
+            var ratingP = $("<p>").text("Rating: " + results.rating);
             animalDiv.append(ratingP);
-            var imgURL = item.images.fixed_height_still.url;
+            
+            
+            var imgURL = results.images.fixed_height.url;
+            imgURL = results.images.fixed_width.url;
             //create elemtn tot hol the image
             var image = $("<img>").attr("src", imgURL).addClass("animalImage");
             animalDiv.append(image);
