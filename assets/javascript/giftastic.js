@@ -37,7 +37,7 @@ function displayAnimalInfo() {
             animalDiv.append(image);
             $("#animalDisplay").prepend(animalDiv);
 
-        }
+        }  
     });
 }
     //If else statements to determine if the gif is animated or still and
@@ -60,7 +60,7 @@ function displayAnimalInfo() {
         //Loop through animals array
         for (var i = 0; i < animals.length; i++) {
             //Dynamically generate buttons for each animal
-            var a = $("<button>");
+            var a = $("<button class='btn btn-info'>");
             a.addClass("animalButton");
             //Add data attribute with value of animals at index i
             a.attr("data-name", animals[i]);
