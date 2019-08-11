@@ -1,24 +1,24 @@
-//Initial array of animals
-var animals = ["skyscraper", "car", "ocean", "lion", "elephant"];
+//Initial array of gifs
+var gifs = ["skyscraper", "car", "ocean", "lion", "elephant"];
 
-function displayAnimalInfo() {
-    var animal = $(this).attr("data-name");
+function displaygifInfo() {
+    var gif = $(this).attr("data-name");
     var queryUrl = "https://api.giphy.com/v1/gifs/search?q=" +
-        animal + "&api_key=NU4CtgobR6DQrOPgFkEn1MAdKV6cmqN7";
-    //Create ajax call for the specific animalBtn being clicked
+        gif + "&api_key=NU4CtgobR6DQrOPgFkEn1MAdKV6cmqN7";
+    //Create ajax call for the specific gifBtn being clicked
     $.ajax({
         url: queryUrl,
         method: "GET"
     }).done(function (response) {
-        $("#animalDisplay").empty();
-        for (var i = 0; i < 10; i++) {
-            var animalDiv = $("<div>").addClass("animalDiv")
+        $("#gifDisplay").empty();
+        for (var i = 0; i < 25; i++) {
+            var gifDiv = $("<div>").addClass("gifDiv")
             console.log(response.data[i]);
             var results = response.data[i];
             //Get the rating and append it to the screen with the divs
             var rating = results.rating;
             var ratingP = $("<p class='ratingP'>").text("Rating: " + results.rating);
-            animalDiv.append(ratingP);
+            gifDiv.append(ratingP);
             //variable that dynamically creates an image element 
             var image = $("<img>");
             //variable with the source of an animated gif
@@ -28,16 +28,17 @@ function displayAnimalInfo() {
             
             //Add attributes that can be used in the if else statements to start
             //and stop the gifs.
-            image.addClass("animalImage");
+            image.addClass("gifImage");
             image.attr("src", imgStill);
             image.attr("data-state", "still");
             image.attr("data-still", imgStill);
             image.attr("data-animate", imgAnimate);
-            //Append the image to the animal div and prepend animalDiv to #animalDisplay
-            animalDiv.append(image);
-            $("#animalDisplay").prepend(animalDiv);
+            //Append the image to the gif div and prepend gifDiv to #gifDisplay
+            gifDiv.append(image);
+            $("#gifDisplay").prepend(gifDiv);
 
         }  
+        
     });
 }
     //If else statements to determine if the gif is animated or still and
@@ -57,15 +58,15 @@ function displayAnimalInfo() {
     function renderButtons() {
         //Make sure there are no duplicate buttons
         $("#buttonDisplay").empty();
-        //Loop through animals array
-        for (var i = 0; i < animals.length; i++) {
-            //Dynamically generate buttons for each animal
+        //Loop through gifs array
+        for (var i = 0; i < gifs.length; i++) {
+            //Dynamically generate buttons for each gif
             var a = $("<button>");
-            a.addClass("animalButton");
-            //Add data attribute with value of animals at index i
-            a.attr("data-name", animals[i]);
+            a.addClass("gifButton");
+            //Add data attribute with value of gifs at index i
+            a.attr("data-name", gifs[i]);
             //Add text inside button
-            a.text(animals[i]);
+            a.text(gifs[i]);
             $("#buttonDisplay").append(a);
 
         }
@@ -77,18 +78,18 @@ function displayAnimalInfo() {
         //Prevents form from trying to submit itself
         event.preventDefault();
         //Get text from input
-        var animalBtn = $("#animalInput").val().trim();
+        var gifBtn = $("#gifInput").val().trim();
         //Add text from input to array
-        animals.push(animalBtn);
-        console.log(animals);
+        gifs.push(gifBtn);
+        console.log(gifs);
         renderButtons();
 
     });
 
-    //Event listener for animalButton to display the gifs and rating to the page.
-    $(document).on("click", ".animalButton", displayAnimalInfo);
-    //Event listener for animalImage to start or stop the gif on click.
-    $(document).on('click', ".animalImage", startStopGif);
+    //Event listener for gifButton to display the gifs and rating to the page.
+    $(document).on("click", ".gifButton", displaygifInfo);
+    //Event listener for gifImage to start or stop the gif on click.
+    $(document).on('click', ".gifImage", startStopGif);
     //Display the initial buttons
     renderButtons();
 

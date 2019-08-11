@@ -1,8 +1,10 @@
 
 body{
+    overflow-x: hidden;
+    z-index:0;
     margin:0px;
-    background-color: darkgray;
-}
+    background-image: linear-gradient(black, white);
+    }
 #topContainer{
     width:100%;
     height:300px;
@@ -17,11 +19,11 @@ body{
 }
 #inputForm{
     margin:20px;
-    background-color:darkslategray;
+    background-color:black;
     text-align: center;
     padding:10px;
 }
-#animalInput{
+#gifInput{
     width:60%;
     height:80px;
     font-size:50px;
@@ -32,31 +34,33 @@ body{
     height:100px;
     font-size:50px;
     margin-top:20px;
-    background-color:white;
+    background-image: linear-gradient(teal, white);
 }
-.animalButton{
+.gifButton{
     width:200px;
     height:100px;
     font-size:40px;
     background-color:white;
+    background-image: linear-gradient(teal, white);
+    color:white
 }
-#animalDisplay{
+#gifDisplay{
     width:100%;
     height:500px;
     display:flex;
     overflow-x: scroll;
     overflow-y: none;
     font-size:30px;
-    background-color:darkslategray;
+    background-color:black;
     padding:10px;
 }
-.animalDiv{
+.gifDiv{
     width:auto;
     height:auto;
     margin:auto;
-    background-color: darkslategray;
+    background-color: black;
 }
-.animalImage{
+.gifImage{
     height:200px;
     }
 .ratingP{
