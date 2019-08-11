@@ -1,5 +1,5 @@
 //Initial array of animals
-var animals = ["dog", "cat", "mouse", "lion", "elephant"];
+var animals = ["skyscraper", "car", "ocean", "lion", "elephant"];
 
 function displayAnimalInfo() {
     var animal = $(this).attr("data-name");
@@ -17,7 +17,7 @@ function displayAnimalInfo() {
             var results = response.data[i];
             //Get the rating and append it to the screen with the divs
             var rating = results.rating;
-            var ratingP = $("<p>").text("Rating: " + results.rating);
+            var ratingP = $("<p class='ratingP'>").text("Rating: " + results.rating);
             animalDiv.append(ratingP);
             //variable that dynamically creates an image element 
             var image = $("<img>");
@@ -60,7 +60,7 @@ function displayAnimalInfo() {
         //Loop through animals array
         for (var i = 0; i < animals.length; i++) {
             //Dynamically generate buttons for each animal
-            var a = $("<button class='btn btn-info'>");
+            var a = $("<button>");
             a.addClass("animalButton");
             //Add data attribute with value of animals at index i
             a.attr("data-name", animals[i]);
