@@ -3,8 +3,19 @@ html{
     overflow-x: hidden;
     z-index:0;
     margin:0px;
-    background-image: linear-gradient(black, darkgrey);
+    background-color:grey;
     height:120%;
+    }
+    #header{
+        width:100%;
+        height:10%;
+        color:white;
+        font-size:50px;
+        text-align:center;
+        border-bottom:solid white;
+    }
+    h1{
+        border-bottom:solid white;
     }
 #topContainer{
     width:100%;
@@ -17,10 +28,10 @@ html{
     height:auto;
     display:flex;
     text-align: center;
+    border-bottom:solid white;
 }
 #inputForm{
     margin:20px;
-    background-color:black;
     text-align: center;
     padding:10px;
 }
@@ -35,31 +46,31 @@ html{
     height:100px;
     font-size:50px;
     margin-top:20px;
-    background-image: linear-gradient(teal, white);
+    background-color:teal;
+    border-radius:10px;
 }
 .gifButton{
     width:200px;
     height:100px;
     font-size:40px;
     background-color:white;
-    background-image: linear-gradient(teal, white);
+    background-color:teal;
+    border-radius:10px;
     color:white
 }
+
 #gifDisplay{
     width:100%;
     height:500px;
     display:flex;
-    overflow-x: scroll;
-    overflow-y: none;
+    overflow:auto;
     font-size:30px;
-    background-color:black;
     padding:10px;
 }
 .gifDiv{
     width:auto;
     height:auto;
-    margin:auto;
-    background-color: black;
+    margin:0px;
 }
 .gifImage{
     height:200px;

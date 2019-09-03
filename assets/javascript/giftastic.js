@@ -72,7 +72,7 @@ function displaygifInfo() {
         }
     }
 
-
+    
     //On-click function for submitBtn
     $("#submitBtn").on("click", function (event) {
         //Prevents form from trying to submit itself
