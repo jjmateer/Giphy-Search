@@ -13,9 +13,12 @@ html{
         font-size:50px;
         text-align:center;
         border-bottom:solid white;
+        background:darkgrey;    
+        border-radius:25px;
     }
     h1{
         border-bottom:solid white;
+        margin-top:0px;
     }
 #topContainer{
     width:100%;
@@ -29,6 +32,7 @@ html{
     display:flex;
     text-align: center;
     border-bottom:solid white;
+    background:darkgrey; 
 }
 #inputForm{
     margin:20px;
@@ -40,6 +44,7 @@ html{
     height:80px;
     font-size:50px;
     background-color:lightgray;
+    border-radius:25px;
 }
 #submitBtn{
     width:60%;
@@ -48,6 +53,7 @@ html{
     margin-top:20px;
     background-color:teal;
     border-radius:10px;
+    
 }
 .gifButton{
     width:200px;
@@ -66,6 +72,8 @@ html{
     overflow:auto;
     font-size:30px;
     padding:10px;
+    background:darkgrey; 
+    border-radius:25px;
 }
 .gifDiv{
     width:auto;
