@@ -12,14 +12,17 @@ html{
         color:white;
         font-size:75px;
         text-align:center;
-        border-bottom:solid white;
         background:darkgrey;    
         border-radius:25px;
         background-size:cover;
     }
  h1{
-        border-bottom:solid white;
         margin-top:0px;
+        color:teal;
+        font-size:150px;
+        width:100%;
+        text-align: center;
+        text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
     }
 p{
     margin-top:0px;
