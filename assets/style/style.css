@@ -1,97 +1,104 @@
+html {
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+}
+body{
+    background-image: url(./images/background.jpg);
+    width:100%;
+    height:100%;
+    z-index: 0;
+    margin: 0px;
+    background-color: grey;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#header {
+  width: 100%;
+  height: 350px;
+  color: white;
+  font-size: 75px;
+  text-align: center;
+  background: darkgrey;
+  border-radius: 25px;
+}
+h1 {
+  margin-top: 0px;
+  color: teal;
+  font-size: 150px;
+  width: 100%;
+  text-align: center;
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
+    1px 1px 0 white;
+}
+p {
+  margin-top: 0px;
+}
+#topContainer {
+  width: 100%;
+  height: 300px;
+  margin: auto;
+  margin-bottom: 100px;
+}
+#buttonDisplay {
+  width: 100%;
+  height: auto;
+  display: flex;
+  text-align: center;
+}
+#inputForm {
+  margin: 20px;
+  text-align: center;
+  padding: 10px;
+}
+#gifInput {
+  width: 60%;
+  height: 80px;
+  font-size: 50px;
+  background-color: lightgray;
+  border-radius: 25px;
+}
+#submitBtn {
+  width: 60%;
+  height: 100px;
+  font-size: 50px;
+  margin-top: 20px;
+  background-color: teal;
+  border-radius: 25px;
+}
+.gifButton {
+  width: 200px;
+  height: 100px;
+  font-size: 40px;
+  background-color: teal;
+  border-radius: 10px;
+  color: white;
+  margin:auto;
+}
 
-html{
-    overflow-x: hidden;
-    z-index:0;
-    margin:0px;
-    background-color:grey;
-    height:120%;
-    }
- #header{
-        width:100%;
-        height:350px;
-        color:white;
-        font-size:75px;
-        text-align:center;
-        background:darkgrey;    
-        border-radius:25px;
-        background-size:cover;
-    }
- h1{
-        margin-top:0px;
-        color:teal;
-        font-size:150px;
-        width:100%;
-        text-align: center;
-        text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
-    }
-p{
-    margin-top:0px;
+#gifDisplay {
+  width: 99%;
+  height: 500px;
+  margin:auto;
+  display: flex;
+  overflow: auto;
+  font-size: 30px;
+  padding: 10px;
+  background: lightgray;
+  border-radius: 25px;
 }
-#topContainer{
-    width:100%;
-    height:300px;
-    margin:auto;
-    margin-bottom:100px;
+.gifDiv {
+  width: auto;
+  height: auto;
+  margin: 0px;
+  /* background-color:gray; */
 }
-#buttonDisplay{
-    width:100%;
-    height:auto;
-    display:flex;
-    text-align: center;
-    border-bottom:solid white;
-    background:darkgrey; 
-    border-radius:10px;
+.gifImage {
+  height: 200px;
 }
-#inputForm{
-    margin:20px;
-    text-align: center;
-    padding:10px;
-}
-#gifInput{
-    width:60%;
-    height:80px;
-    font-size:50px;
-    background-color:lightgray;
-    border-radius:25px;
-}
-#submitBtn{
-    width:60%;
-    height:100px;
-    font-size:50px;
-    margin-top:20px;
-    background-color:teal;
-    border-radius:25px;
-    
-}
-.gifButton{
-    width:200px;
-    height:100px;
-    font-size:40px;
-    background-color:white;
-    background-color:teal;
-    border-radius:10px;
-    color:white
-}
-
-#gifDisplay{
-    width:100%;
-    height:500px;
-    display:flex;
-    overflow:auto;
-    font-size:30px;
-    padding:10px;
-    background:darkgrey; 
-    border-radius:25px;
-}
-.gifDiv{
-    width:auto;
-    height:auto;
-    margin:0px;
-}
-.gifImage{
-    height:200px;
-    }
-.ratingP{
-    width:200px;
-    height:auto;
+.ratingP {
+  width: 200px;
+  height: auto;
 }
